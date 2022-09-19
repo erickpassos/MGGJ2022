@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2053b3a2d26274099afcbe7d828277, type: 3}
+  m_Name: WaterOcean
+  m_EditorClassIdentifier: 
+  Settings:
+    Identifier:
+      Path: Resources/DB/Water/WaterOcean
+      Guid:
+        Value: 1885801570388077351
+    WaveSources:
+    - Speed:
+        RawValue: 65536
+      Wavelength:
+        RawValue: 1638400
+      Amplitude:
+        RawValue: 32768
+      Axis: 1
+    - Speed:
+        RawValue: 81920
+      Wavelength:
+        RawValue: 589824
+      Amplitude:
+        RawValue: 9830
+      Axis: 0
+    - Speed:
+        RawValue: 72744
+      Wavelength:
+        RawValue: 792985
+      Amplitude:
+        RawValue: 9830
+      Axis: 2

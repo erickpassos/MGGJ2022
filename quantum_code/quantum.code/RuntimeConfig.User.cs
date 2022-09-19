@@ -2,6 +2,13 @@
 using System;
 
 namespace Quantum {
-  partial class RuntimeConfig {
+  partial class RuntimeConfig
+  {
+    public AssetRefWaveSample WaveSample;
+
+    partial void SerializeUserData(BitStream stream)
+    {
+      stream.Serialize(ref WaveSample);
+    }
   }
 }

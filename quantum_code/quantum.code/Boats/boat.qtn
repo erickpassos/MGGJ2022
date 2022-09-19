@@ -1,0 +1,8 @@
+asset BoatConfig;
+
+component Boat {
+    asset_ref<BoatConfig> Config;
+    player_ref Player;
+    [HideInInspector]
+    FP CurrentRudderAngle;
+}

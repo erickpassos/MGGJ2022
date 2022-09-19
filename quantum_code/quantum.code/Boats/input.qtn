@@ -1,0 +1,7 @@
+input {
+    button Forward;
+    button Backward;
+    button Left;
+    button Right;
+    button Use;
+}

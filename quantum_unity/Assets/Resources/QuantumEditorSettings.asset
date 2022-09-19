@@ -32,7 +32,7 @@ MonoBehaviour:
   StaticColliderGizmoStyle:
     DisableFill: 0
   DrawStaticMeshTriangles: 1
-  DrawStaticMeshNormals: 1
+  DrawStaticMeshNormals: 0
   DrawSceneMeshCells: 1
   DrawSceneMeshTriangles: 1
   StaticColliderColor: {r: 0.70980394, g: 0.9019608, b: 0.11372549, a: 1}
@@ -69,9 +69,7 @@ MonoBehaviour:
   UseQuantumAssetInspector: 1
   UseAssetBasePostprocessor: 1
   UseQuantumToolbarUtilities: 1
-  QuantumToolbarAnchor: 0
-  QuantumToolbarSize: 200
-  QuantumToolbarOffset: 200
+  QuantumToolbarZone: 0
   UsePhotonAppVersionsPostprocessor: 1
   EntityComponentInspectorMode: 2
   FPDisplayPrecision: 5

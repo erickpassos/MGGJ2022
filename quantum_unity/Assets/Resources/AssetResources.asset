@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd8e95ae0daaec4496511105240e8a3, type: 3}
   m_Name: AssetResources
   m_EditorClassIdentifier: 
-  AddressablesGroup:
-    _resources: []
   AssetBundlesGroup:
     _resources: []
   ResourcesGroup:
@@ -48,6 +46,16 @@ MonoBehaviour:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
+    - Path: Resources/DB/Water/WaterOcean
+      AssetRef:
+        Id:
+          Value: 1885801570388077351
+      ResourcePath: DB/Water/WaterOcean
+    - Path: Resources/DB/Boats/FishingBoatConfig
+      AssetRef:
+        Id:
+          Value: 2778058764126549803
+      ResourcePath: DB/Boats/FishingBoatConfig
     - Path: Resources/DB/Map1_mesh
       AssetRef:
         Id:

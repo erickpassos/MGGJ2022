@@ -42,16 +42,16 @@ MonoBehaviour:
           RawValue: -655360
         Z:
           RawValue: 0
-      SolverType: 1
-      SolverIterations: 4
-      PositionSolverIterations: 2
-      UseJoints: 1
+      SolverType: 2
+      SolverIterations: 8
+      PositionSolverIterations: 4
+      UseJoints: 0
       UseAngularVelocity: 1
       UseVerticalTransform: 1
       PenetrationAllowance:
         RawValue: 655
       PenetrationCorrection:
-        RawValue: 32768
+        RawValue: 58982
       MinLinearIntegration:
         RawValue: 0
       MinAngularIntegration:

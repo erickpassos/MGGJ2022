@@ -1,0 +1,17 @@
+struct SpringDamper {
+    FP Spring;
+    FP Damper;
+    [HideInInspector]
+    FPVector3 LocalOffset;
+    [HideInInspector]
+    FP HeightOffset;
+    [HideInInspector]
+    FP _previousStrength;
+}
+
+component MultiBuoy {
+    FPVector3 Offset;
+    FP Spring;
+    FP Damper;
+    array<SpringDamper>[4] Buoys;
+}
