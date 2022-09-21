@@ -18,13 +18,14 @@ public class WaterSampler : MonoBehaviour
   //public Vector2 TestOffset;
 
   public bool UpdateMesh = false;
+  public bool UseQuantumWaves = false;
 
   private Vector3[] _vertices;
   private MeshFilter _filter;
   private Renderer _renderer;
-  public int _xIndex;
-  public int _zIndex;
-  public int _timeIndex;
+  private int _xIndex;
+  private int _zIndex;
+  private int _timeIndex;
 
   // when networked, these are cached
   private bool _initializedForNetwork = false;
@@ -81,6 +82,7 @@ public class WaterSampler : MonoBehaviour
 
   private void InitWithQuantum()
   {
+    if (UseQuantumWaves == false) return;
     var sample = QuantumRunner.Default.Game.Frames.Verified.Assets.WaveSample(QuantumSample);
     _renderer.material.SetFloat("_AmplitudeA", sample.WaveSources[0].Amplitude.AsFloat);
     _renderer.material.SetFloat("_SpeedA", sample.WaveSources[0].Speed.AsFloat);

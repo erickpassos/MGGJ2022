@@ -2680,7 +2680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919335523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3048,9 +3048,7 @@ MonoBehaviour:
   Side: 48
   Extent: 1
   UpdateMesh: 0
-  _xIndex: 0
-  _zIndex: 0
-  _timeIndex: 0
+  UseQuantumWaves: 0
 --- !u!4 &1226301893
 Transform:
   m_ObjectHideFlags: 0
@@ -3086,7 +3084,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1595b95e3a9ce054b8ba3bcf1b3e5711, type: 2}
+  - {fileID: 2100000, guid: 8ac40727aeb6e434083f517b73e0ea90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3136,7 +3134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1365372313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3154,11 +3152,11 @@ MonoBehaviour:
       X:
         RawValue: 62259
       Y:
-        RawValue: 0
+        RawValue: -32768
       Z:
         RawValue: 124517
     Spring:
-      RawValue: 1966080
+      RawValue: 1310720
     Damper:
       RawValue: 6553
     Buoys:
@@ -3731,9 +3729,7 @@ MonoBehaviour:
   StaticCollider3DReferences:
   - {fileID: 7908851965632956068}
   - {fileID: 7928505451100498098}
-  MapEntityReferences:
-  - {fileID: 919335523}
-  - {fileID: 1365372314}
+  MapEntityReferences: []
 --- !u!4 &2068968506
 Transform:
   m_ObjectHideFlags: 0

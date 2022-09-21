@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterWavesMaterial
-  m_Shader: {fileID: 4800000, guid: befce5cb40878e940bc173723bf52703, type: 3}
+  m_Name: GestnerWaves
+  m_Shader: {fileID: 4800000, guid: 10cf14363de9fdf4bad88e50ca43752a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - BACKSOLID
@@ -21,7 +21,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3010
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -79,8 +79,8 @@ Material:
     - _AmbientPower: 0
     - _Amplitude: 0.5
     - _AmplitudeA: 0.3
-    - _AmplitudeB: 0
-    - _AmplitudeC: 0
+    - _AmplitudeB: 0.15
+    - _AmplitudeC: 0.15
     - _Brightness: 0
     - _BumpScale: 1
     - _ColorCorrectionEnable: 0
@@ -164,6 +164,7 @@ Material:
     - _SpeedB: 1.25
     - _SpeedC: 1.11
     - _SrcBlend: 1
+    - _SteepnessA: 0.141
     - _UVSec: 0
     - _UnityFogEnable: 0
     - _WaterFoamDepthCut: 0.75
