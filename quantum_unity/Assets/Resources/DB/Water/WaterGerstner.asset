@@ -23,7 +23,7 @@ MonoBehaviour:
     - Wavelength:
         RawValue: 655360
       Steepness:
-        RawValue: 7208
+        RawValue: 13107
       Direction:
         X:
           RawValue: 65536
@@ -41,7 +41,7 @@ MonoBehaviour:
     - Wavelength:
         RawValue: 983040
       Steepness:
-        RawValue: 6553
+        RawValue: 14417
       Direction:
         X:
           RawValue: 65536

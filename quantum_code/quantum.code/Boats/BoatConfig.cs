@@ -18,8 +18,13 @@ namespace Quantum
     // (rudder?)
     public void UpdateBoat(Frame f, ref BoatSystem.Filter filter, WaveSampleBase waves)
     {
-      var keelForce = UpdateWaterfoil(f, ref filter, filter.Transform->Right) * KeelArea;
-      filter.Body->AddForce(keelForce);
+      var rudderPosition = filter.Transform->TransformPoint(RudderOffset);
+      var frontPosition = filter.Transform->TransformPoint(-RudderOffset);
+      // two points for keel
+      var keelForce = UpdateWaterfoil(f, ref filter, RudderOffset, filter.Transform->Right) * KeelArea * FP._0_50;
+      filter.Body->AddForceAtPosition(keelForce, rudderPosition, filter.Transform);
+      keelForce = UpdateWaterfoil(f, ref filter, -RudderOffset, filter.Transform->Right) * KeelArea * FP._0_50;
+      filter.Body->AddForceAtPosition(keelForce, frontPosition, filter.Transform);
 
       // rudder and engine only if controlled by player
       if (filter.Boat->Player == default) return;
@@ -41,8 +46,8 @@ namespace Quantum
       var localRudderRotation = FPQuaternion.Euler(0, filter.Boat->CurrentRudderAngle, 0);
       var localRudderRight = localRudderRotation * FPVector3.Right;
       var rudderRight = filter.Transform->TransformDirection(localRudderRight);
-      var rudderForce = UpdateWaterfoil(f, ref filter, rudderRight) * RudderArea;
-      var rudderPosition = filter.Transform->TransformPoint(RudderOffset);
+      var rudderForce = UpdateWaterfoil(f, ref filter, localRudderRight, rudderRight) * RudderArea;
+     
 
       // both rudder force and engine force depend on it being under water
       var rudderInWater = waves.CheckUnderwater(f, rudderPosition, out var heightAtRudder);
@@ -65,9 +70,10 @@ namespace Quantum
 #endif
     }
 
-    public FPVector3 UpdateWaterfoil(Frame f, ref BoatSystem.Filter filter, FPVector3 sideways)
+    public FPVector3 UpdateWaterfoil(Frame f, ref BoatSystem.Filter filter, FPVector3 offset, FPVector3 sideways)
     {
-      var sidewaysVelocity = FPVector3.Project(filter.Body->Velocity, sideways);
+      var velocity = filter.Body->GetRelativePointVelocity(offset, filter.Transform);
+      var sidewaysVelocity = FPVector3.Project(velocity, sideways);
       return -sidewaysVelocity;
       
     }
