@@ -7,8 +7,19 @@ Shader "Custom/GestnerWaves"
         _Glossiness("Glossiness", Range(0,1)) = 0
         _Specular("Specular", Range(0,1)) = 0
         // waves
-        _SteepnessA ("Steepness", Range(0, 1)) = 0.5
+        _Gravity ("Gravity", float) = 9.8
+        
+        _SteepnessA ("SteepnessA", Range(0, 1)) = 0.5
         _WaveLengthA("WavelengthA", Float) = 10
+        _DirectionA ("DirectionA (2D)", Vector) = (1,0,0,0)
+        
+        _SteepnessB ("SteepnessB", Range(0, 1)) = 0.5
+        _WaveLengthB("WavelengthB", Float) = 10
+        _DirectionB ("DirectionB (2D)", Vector) = (1,0,0,0)
+        
+        _SteepnessC ("SteepnessC", Range(0, 1)) = 0.5
+        _WaveLengthC("WavelengthC", Float) = 10
+        _DirectionC ("DirectionC (2D)", Vector) = (1,0,0,0)
 
         [Header(WaterFog)]
         _WaterFogDensity ("Water Fog Density", Range(0, 2)) = 0.1
@@ -48,43 +59,73 @@ Shader "Custom/GestnerWaves"
             float4 screenPos;
         };
 
+        struct GestnerResult
+        {
+            float3 normal;
+            float3 pos;
+        };
+
         half _Glossiness, _Specular;
         fixed4 _Color;
-        float _SteepnessA, _WaveLengthA, _RenderTime, _X, _Z;
+        float2 _DirectionA, _DirectionB, _DirectionC;
+        float _Gravity, _SteepnessA, _WaveLengthA, _SteepnessB, _WaveLengthB, _SteepnessC, _WaveLengthC, _RenderTime, _X, _Z;
         sampler2D _CameraDepthTexture, _WaterBackground;
         float4 _CameraDepthTexture_TexelSize;
         float _WaterFogDensity, _WaterFoamDepthCut, _FogDistance;
 
-        void vert(inout appdata_full vertexData)
+        GestnerResult Gestner(float3 pos, float2 uv, float wavelength, float steepness, float2 direction)
         {
-            float3 p = vertexData.vertex.xyz;
-            float3 pos = p;
-
+            GestnerResult result;
+			float3 p = pos;
             pos.x += _X;
             pos.z += _Z;
 
-            float kA = 2 * UNITY_PI / _WaveLengthA;
-            float c = sqrt(9.8 / kA);
-            float f = kA * (pos.x + pos.z - c * _RenderTime);
-            float a = _SteepnessA / kA;
-            p.x += a * cos(f);
-            p.y = a * sin(f);
+            const float k = 2 * UNITY_PI / wavelength;
+            const float c = sqrt(_Gravity / k);
+            const float a = steepness / k;
+            float2 d = normalize(direction);
+			float f = k * (dot(d, pos.xz) - c * _RenderTime);
+
+            // local space
+            p.x = d.x * (a * cos(f));
+			p.y = a * sin(f);
+			p.z = d.y * (a * cos(f));
 
             // flat shading
-            float2 uv = vertexData.texcoord.xy;
-            uv.x += p.x;
+            uv.x += _X;
             uv.y += _Z;
-            f = kA * (uv.x + uv.y - c * _RenderTime);
-
-            float3 tangent = normalize(float3(
-                1 - _SteepnessA * sin(f),
-                _SteepnessA * cos(f),
-                0));
-            float3 normal = float3(-tangent.y, tangent.x, 0);
-
-            vertexData.vertex.xyz = p;
-            vertexData.normal = normal;
+            f = k * (dot(d, uv) - c * _RenderTime);
+   
+            float3 tangent = float3(
+				1 - d.x * d.x * (steepness * sin(f)),
+				d.x * (steepness * cos(f)),
+				-d.x * d.y * (steepness * sin(f))
+			);
+			float3 binormal = float3(
+				-d.x * d.y * (steepness * sin(f)),
+				d.y * (steepness * cos(f)),
+				1 - d.y * d.y * (steepness * sin(f))
+			);
+			result.normal = normalize(cross(binormal, tangent));
+        	result.pos = p;
+            return result;
         }
+
+        void vert(inout appdata_full vertexData)
+        {
+            float3 p = vertexData.vertex.xyz;
+            float2 uv = vertexData.texcoord.xy;
+            GestnerResult gestnerA = Gestner(p, uv, _WaveLengthA, _SteepnessA, _DirectionA);
+            GestnerResult gestnerB = Gestner(p, uv, _WaveLengthB, _SteepnessB, _DirectionB);
+            GestnerResult gestnerC = Gestner(p, uv, _WaveLengthC, _SteepnessC, _DirectionC);
+            vertexData.vertex.xyz += gestnerA.pos + gestnerB.pos + gestnerC.pos;
+            vertexData.normal = (gestnerA.normal + gestnerB.normal + gestnerC.normal) / 3;
+
+            //float3 tangent = normalize(float3(1, vertexData.vertex.y, 0));
+			//vertexData.normal = float3(-tangent.y, tangent.x, 0);
+        }
+
+        
 
         float3 ColorBelowWater(float4 screenPos, float3 waterColor)
         {

@@ -8,7 +8,7 @@ public class WaterSampler : MonoBehaviour
   public float CameraOffsetDistance = 10;
   public Transform Camera;
 
-  public AssetRefWaveSample QuantumSample;
+  public AssetRefWaveSampleBase QuantumSample;
 
   public bool GenerateMesh = false;
   public bool CircularMesh = false;
@@ -83,16 +83,36 @@ public class WaterSampler : MonoBehaviour
   private void InitWithQuantum()
   {
     if (UseQuantumWaves == false) return;
-    var sample = QuantumRunner.Default.Game.Frames.Verified.Assets.WaveSample(QuantumSample);
-    _renderer.material.SetFloat("_AmplitudeA", sample.WaveSources[0].Amplitude.AsFloat);
-    _renderer.material.SetFloat("_SpeedA", sample.WaveSources[0].Speed.AsFloat);
-    _renderer.material.SetFloat("_WaveLengthA", sample.WaveSources[0].Wavelength.AsFloat);
-    _renderer.material.SetFloat("_AmplitudeB", sample.WaveSources[1].Amplitude.AsFloat);
-    _renderer.material.SetFloat("_SpeedB", sample.WaveSources[1].Speed.AsFloat);
-    _renderer.material.SetFloat("_WaveLengthB", sample.WaveSources[1].Wavelength.AsFloat);
-    _renderer.material.SetFloat("_AmplitudeC", sample.WaveSources[2].Amplitude.AsFloat);
-    _renderer.material.SetFloat("_SpeedC", sample.WaveSources[2].Speed.AsFloat);
-    _renderer.material.SetFloat("_WaveLengthC", sample.WaveSources[2].Wavelength.AsFloat);
+    var sample = QuantumRunner.Default.Game.Frames.Verified.FindAsset<WaveSampleSine>(QuantumSample.Id);
+    if (sample != null)
+    {
+      _renderer.material.SetFloat("_AmplitudeA", sample.WaveSources[0].Amplitude.AsFloat);
+      _renderer.material.SetFloat("_SpeedA", sample.WaveSources[0].Speed.AsFloat);
+      _renderer.material.SetFloat("_WaveLengthA", sample.WaveSources[0].Wavelength.AsFloat);
+      _renderer.material.SetFloat("_AmplitudeB", sample.WaveSources[1].Amplitude.AsFloat);
+      _renderer.material.SetFloat("_SpeedB", sample.WaveSources[1].Speed.AsFloat);
+      _renderer.material.SetFloat("_WaveLengthB", sample.WaveSources[1].Wavelength.AsFloat);
+      _renderer.material.SetFloat("_AmplitudeC", sample.WaveSources[2].Amplitude.AsFloat);
+      _renderer.material.SetFloat("_SpeedC", sample.WaveSources[2].Speed.AsFloat);
+      _renderer.material.SetFloat("_WaveLengthC", sample.WaveSources[2].Wavelength.AsFloat);
+    }
+    var gerstner = QuantumRunner.Default.Game.Frames.Verified.FindAsset<GerstnerWaves>(QuantumSample.Id);
+    if (gerstner != null)
+    {
+      _renderer.material.SetFloat("_Gravity", gerstner.Gravity.AsFloat);
+      
+      _renderer.material.SetFloat("_SteepnessA", gerstner.WaveSources[0].Steepness.AsFloat);
+      _renderer.material.SetVector("_DirectionA", gerstner.WaveSources[0].Direction.ToUnityVector2());
+      _renderer.material.SetFloat("_WaveLengthA", gerstner.WaveSources[0].Wavelength.AsFloat);
+      
+      _renderer.material.SetFloat("_SteepnessB", gerstner.WaveSources[1].Steepness.AsFloat);
+      _renderer.material.SetVector("_DirectionB", gerstner.WaveSources[1].Direction.ToUnityVector2());
+      _renderer.material.SetFloat("_WaveLengthB", gerstner.WaveSources[1].Wavelength.AsFloat);
+      
+      _renderer.material.SetFloat("_SteepnessC", gerstner.WaveSources[2].Steepness.AsFloat);
+      _renderer.material.SetVector("_DirectionC", gerstner.WaveSources[2].Direction.ToUnityVector2());
+      _renderer.material.SetFloat("_WaveLengthC", gerstner.WaveSources[2].Wavelength.AsFloat);
+    }
     _initializedForNetwork = true;
   }
 

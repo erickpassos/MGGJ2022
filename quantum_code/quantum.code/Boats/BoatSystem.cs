@@ -12,8 +12,9 @@ namespace Quantum
     
     public override void Update(Frame f, ref Filter filter)
     {
+      var waves = f.Assets.WaveSampleBase(f.RuntimeConfig.WaveSample);
       var boatConfig = f.Assets.BoatConfig(filter.Boat->Config); 
-      boatConfig.UpdateBoat(f, ref filter);
+      boatConfig.UpdateBoat(f, ref filter, waves);
     }
   }
 }

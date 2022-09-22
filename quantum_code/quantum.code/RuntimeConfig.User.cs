@@ -4,7 +4,7 @@ using System;
 namespace Quantum {
   partial class RuntimeConfig
   {
-    public AssetRefWaveSample WaveSample;
+    public AssetRefWaveSampleBase WaveSample;
 
     partial void SerializeUserData(BitStream stream)
     {

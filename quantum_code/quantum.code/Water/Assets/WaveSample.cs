@@ -2,11 +2,24 @@
 using Photon.Deterministic;
 namespace Quantum
 {
-  public unsafe partial class WaveSample : AssetObject
+  public abstract unsafe partial class WaveSampleBase : AssetObject
+  {
+    public abstract FP GetHeight(FPVector2 position, FP time);
+
+    public bool CheckUnderwater(Frame f, FPVector3 position, out FP height)
+    {
+      height = GetHeight(position.XZ, f.Number * f.DeltaTime);
+      return position.Y <= height;
+    }
+  }
+
+
+  [Serializable]
+  public class WaveSampleSine : WaveSampleBase
   {
     public Senoid[] WaveSources;
 
-    public FP GetHeight(FPVector2 position, FP time)
+    public override FP GetHeight(FPVector2 position, FP time)
     {
       // reset on first sample
       var h = FP._0;
@@ -32,14 +45,7 @@ namespace Quantum
       }
       return h;
     }
-    public bool CheckUnderwater(Frame f, Transform3D* transform, out FP height)
-    {
-      height = GetHeight(transform->Position.XZ, f.Number * f.DeltaTime);
-      return transform->Position.Y <= height;
-    }
   }
-
-
 
   public enum Axis
   {

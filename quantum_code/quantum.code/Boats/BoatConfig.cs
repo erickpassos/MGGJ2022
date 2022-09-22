@@ -16,20 +16,16 @@ namespace Quantum
     // add keel DONE
     // add steering DONE
     // (rudder?)
-    public void UpdateBoat(Frame f, ref BoatSystem.Filter filter)
+    public void UpdateBoat(Frame f, ref BoatSystem.Filter filter, WaveSampleBase waves)
     {
+      var keelForce = UpdateWaterfoil(f, ref filter, filter.Transform->Right) * KeelArea;
+      filter.Body->AddForce(keelForce);
+
+      // rudder and engine only if controlled by player
+      if (filter.Boat->Player == default) return;
+      
       var input = f.GetPlayerInput(filter.Boat->Player);
       var forward = filter.Transform->Forward;
-      var up = filter.Transform->Up;
-
-      if (input->Forward.IsDown)
-      {
-        filter.Body->AddForce(forward * Accel);
-      }
-      if (input->Backward.IsDown)
-      {
-        filter.Body->AddForce(-forward * Accel);
-      }
 
       filter.Boat->CurrentRudderAngle = FP._0;
       if (input->Left.IsDown)
@@ -40,9 +36,6 @@ namespace Quantum
       {
         filter.Boat->CurrentRudderAngle = -MaxRudderAngle;
       }
-      
-      var keelForce = UpdateWaterfoil(f, ref filter, filter.Transform->Right) * KeelArea;
-      filter.Body->AddForce(keelForce);
 
       // rudder physics
       var localRudderRotation = FPQuaternion.Euler(0, filter.Boat->CurrentRudderAngle, 0);
@@ -50,8 +43,21 @@ namespace Quantum
       var rudderRight = filter.Transform->TransformDirection(localRudderRight);
       var rudderForce = UpdateWaterfoil(f, ref filter, rudderRight) * RudderArea;
       var rudderPosition = filter.Transform->TransformPoint(RudderOffset);
+
+      // both rudder force and engine force depend on it being under water
+      var rudderInWater = waves.CheckUnderwater(f, rudderPosition, out var heightAtRudder);
+      if (rudderInWater == false) return;
       
       filter.Body->AddForceAtPosition(rudderForce, rudderPosition, filter.Transform);
+      
+      if (input->Forward.IsDown)
+      {
+        filter.Body->AddForce(forward * Accel);
+      }
+      if (input->Backward.IsDown)
+      {
+        filter.Body->AddForce(-forward * Accel);
+      }
       
 #if DEBUG
       Draw.Sphere(rudderPosition, FP._0_10, ColorRGBA.Black);

@@ -32,7 +32,7 @@ namespace Quantum
     }
     public override void Update(Frame f, ref Filter filter)
     {
-      var waves = f.Assets.WaveSample(f.RuntimeConfig.WaveSample);
+      var waves = f.Assets.WaveSampleBase(f.RuntimeConfig.WaveSample);
       
       for (int i = 0; i < 4; i++)
       {

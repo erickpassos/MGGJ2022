@@ -87,6 +87,7 @@
     <Compile Include="SimulationConfig.User.cs" />
     <Compile Include="SystemSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Water\Assets\GerstnerWaves.cs" />
     <Compile Include="Water\Assets\WaveSample.cs" />
   </ItemGroup>
   <ItemGroup>

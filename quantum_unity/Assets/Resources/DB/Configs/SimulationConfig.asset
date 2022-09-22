@@ -45,7 +45,7 @@ MonoBehaviour:
       SolverType: 2
       SolverIterations: 8
       PositionSolverIterations: 4
-      UseJoints: 0
+      UseJoints: 1
       UseAngularVelocity: 1
       UseVerticalTransform: 1
       PenetrationAllowance:

@@ -15,10 +15,10 @@ namespace Quantum.Editor {
     }
   }
 
-  [CustomPropertyDrawer(typeof(AssetRefWaveSample))]
-  public class AssetRefWaveSamplePropertyDrawer : PropertyDrawer {
+  [CustomPropertyDrawer(typeof(AssetRefWaveSampleBase))]
+  public class AssetRefWaveSampleBasePropertyDrawer : PropertyDrawer {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
-      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(WaveSampleAsset));
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(WaveSampleBaseAsset));
     }
   }
 

@@ -4,7 +4,7 @@ namespace Quantum
 {
   unsafe partial struct SpringDamper
   {
-    public bool ComputeSpringDamperForce(Frame frame, WaveSample waves, FPVector3 position, out FPVector3 force)
+    public bool ComputeSpringDamperForce(Frame frame, WaveSampleBase waves, FPVector3 position, out FPVector3 force)
     {
       var desiredHeight = waves.GetHeight(new FPVector2(position.X, position.Z), frame.DeltaTime * frame.Number);
       var strength = FPMath.Clamp01(desiredHeight - position.Y) * Spring;

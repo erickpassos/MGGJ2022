@@ -41,16 +41,21 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
+    - Path: Resources/DB/Water/WaterSine
+      AssetRef:
+        Id:
+          Value: 717768266384039144
+      ResourcePath: DB/Water/WaterSine
+    - Path: Resources/DB/Water/WaterGerstner
+      AssetRef:
+        Id:
+          Value: 1615426294986080464
+      ResourcePath: DB/Water/WaterGerstner
     - Path: Resources/DB/Map1
       AssetRef:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
-    - Path: Resources/DB/Water/WaterOcean
-      AssetRef:
-        Id:
-          Value: 1885801570388077351
-      ResourcePath: DB/Water/WaterOcean
     - Path: Resources/DB/Boats/FishingBoatConfig
       AssetRef:
         Id:
