@@ -18,11 +18,18 @@ MonoBehaviour:
       Guid:
         Value: 2778058764126549803
     Accel:
-      RawValue: 983040
+      RawValue: 1179648
     RotationSpeed:
       RawValue: 327680
     KeelArea:
       RawValue: 131072
+    KeelOffset:
+      X:
+        RawValue: 0
+      Y:
+        RawValue: -32768
+      Z:
+        RawValue: 65536
     RudderOffset:
       X:
         RawValue: 0

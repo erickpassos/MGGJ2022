@@ -7,6 +7,7 @@ namespace Quantum
     public FP Accel = 10;
     public FP RotationSpeed = 1;
     public FP KeelArea = 10;
+    public FPVector3 KeelOffset = FPVector3.Forward;
     public FPVector3 RudderOffset = FPVector3.Back;
     public FP RudderArea = 1;
     public FP MaxRudderAngle = 30;
@@ -18,12 +19,12 @@ namespace Quantum
     // (rudder?)
     public void UpdateBoat(Frame f, ref BoatSystem.Filter filter, WaveSampleBase waves)
     {
-      var rudderPosition = filter.Transform->TransformPoint(RudderOffset);
-      var frontPosition = filter.Transform->TransformPoint(-RudderOffset);
+      var backPosition = filter.Transform->TransformPoint(-KeelOffset);
+      var frontPosition = filter.Transform->TransformPoint(KeelOffset);
       // two points for keel
-      var keelForce = UpdateWaterfoil(f, ref filter, RudderOffset, filter.Transform->Right) * KeelArea * FP._0_50;
-      filter.Body->AddForceAtPosition(keelForce, rudderPosition, filter.Transform);
-      keelForce = UpdateWaterfoil(f, ref filter, -RudderOffset, filter.Transform->Right) * KeelArea * FP._0_50;
+      var keelForce = UpdateWaterfoil(f, ref filter, -KeelOffset, filter.Transform->Right) * KeelArea * FP._0_50;
+      filter.Body->AddForceAtPosition(keelForce, backPosition, filter.Transform);
+      keelForce = UpdateWaterfoil(f, ref filter, KeelOffset, filter.Transform->Right) * KeelArea * FP._0_50;
       filter.Body->AddForceAtPosition(keelForce, frontPosition, filter.Transform);
 
       // rudder and engine only if controlled by player
@@ -43,15 +44,16 @@ namespace Quantum
       }
 
       // rudder physics
-      var localRudderRotation = FPQuaternion.Euler(0, filter.Boat->CurrentRudderAngle, 0);
-      var localRudderRight = localRudderRotation * FPVector3.Right;
-      var rudderRight = filter.Transform->TransformDirection(localRudderRight);
-      var rudderForce = UpdateWaterfoil(f, ref filter, localRudderRight, rudderRight) * RudderArea;
-     
+      var rudderPosition = filter.Transform->TransformPoint(RudderOffset);
 
       // both rudder force and engine force depend on it being under water
       var rudderInWater = waves.CheckUnderwater(f, rudderPosition, out var heightAtRudder);
       if (rudderInWater == false) return;
+      
+      var localRudderRotation = FPQuaternion.Euler(0, filter.Boat->CurrentRudderAngle, 0);
+      var localRudderRight = localRudderRotation * FPVector3.Right;
+      var rudderRight = filter.Transform->TransformDirection(localRudderRight);
+      var rudderForce = UpdateWaterfoil(f, ref filter, localRudderRight, rudderRight) * RudderArea;
       
       filter.Body->AddForceAtPosition(rudderForce, rudderPosition, filter.Transform);
       

@@ -96,7 +96,7 @@ MonoBehaviour:
         X:
           RawValue: 0
         Y:
-          RawValue: -65536
+          RawValue: -66191
         Z:
           RawValue: 0
       PhysicsMaterial:
@@ -235,7 +235,7 @@ MonoBehaviour:
     - ShapeConfig:
         ShapeType: 2
         SphereRadius:
-          RawValue: 0
+          RawValue: 32768
         PositionOffset:
           X:
             RawValue: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
         Y:
           RawValue: 195952
         Z:
-          RawValue: -1031536
+          RawValue: -1002700
       Rotation:
         X:
           RawValue: 0
