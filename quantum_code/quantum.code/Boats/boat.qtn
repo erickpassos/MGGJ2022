@@ -1,8 +1,20 @@
 asset BoatConfig;
 
+component BoatControl {
+    player_ref Player;
+}
+
 component Boat {
     asset_ref<BoatConfig> Config;
-    player_ref Player;
     [HideInInspector]
     FP CurrentRudderAngle;
+    [HideInInspector]
+    Transform3D Spawn;
+    entity_ref Barge;
 }
+
+component TimedReset {
+    FP TTL;
+}
+
+signal Reset(EntityRef boat);

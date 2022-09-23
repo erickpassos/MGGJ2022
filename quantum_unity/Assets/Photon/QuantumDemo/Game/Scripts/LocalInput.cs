@@ -19,6 +19,8 @@ public class LocalInput : MonoBehaviour {
     var x = UnityEngine.Input.GetAxis("Horizontal");
     if (x > 0) i.Right = true;
     else if (x < 0) i.Left = true;
+
+    i.Use = UnityEngine.Input.GetButton("Jump");
     
     callback.SetInput(i, DeterministicInputFlags.Repeatable);
   }

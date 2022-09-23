@@ -1,7 +1,4 @@
 using Quantum;
-using System.Collections.Generic;
-using Photon.Deterministic;
-using UnityEditor.XR.LegacyInputHelpers;
 using UnityEngine;
 
 public unsafe class BoatView : MonoBehaviour
@@ -21,7 +18,7 @@ public unsafe class BoatView : MonoBehaviour
     var frame = QuantumRunner.Default?.Game.Frames.Verified;
     if (frame != null)
     {
-      var controls = frame.Unsafe.GetPointer<Boat>(View.EntityRef);
+      var controls = frame.Unsafe.GetPointer<BoatControl>(View.EntityRef);
       if (InitCameraOnStart)
       {
         InitCamera(controls->Player, View.EntityRef);

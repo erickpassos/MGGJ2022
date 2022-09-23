@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e34ba117b934fa47a3716bfe201ba80, type: 3}
+  m_Name: TugBoatConfig
+  m_EditorClassIdentifier: 
+  Settings:
+    Identifier:
+      Path: Resources/DB/Boats/TugBoatConfig
+      Guid:
+        Value: 2778058764126549803
+    Accel:
+      RawValue: 786432
+    AutoAccel:
+      RawValue: 0
+    RotationSpeed:
+      RawValue: 327680
+    KeelArea:
+      RawValue: 131072
+    KeelOffset:
+      X:
+        RawValue: 0
+      Y:
+        RawValue: -32768
+      Z:
+        RawValue: 65536
+    RudderOffset:
+      X:
+        RawValue: 0
+      Y:
+        RawValue: -32768
+      Z:
+        RawValue: -114688
+    RudderArea:
+      RawValue: 262144
+    MaxRudderAngle:
+      RawValue: 1310720

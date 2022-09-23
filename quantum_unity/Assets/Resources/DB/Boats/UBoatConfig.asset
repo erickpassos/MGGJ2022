@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e34ba117b934fa47a3716bfe201ba80, type: 3}
-  m_Name: FishingBoatConfig
+  m_Name: UBoatConfig
   m_EditorClassIdentifier: 
   Settings:
     Identifier:
-      Path: Resources/DB/Boats/FishingBoatConfig
+      Path: Resources/DB/Boats/UBoatConfig
       Guid:
-        Value: 2778058764126549803
+        Value: 940149218974906373
     Accel:
-      RawValue: 1179648
+      RawValue: 524288
+    AutoAccel:
+      RawValue: 0
     RotationSpeed:
       RawValue: 327680
     KeelArea:
@@ -27,16 +29,16 @@ MonoBehaviour:
       X:
         RawValue: 0
       Y:
-        RawValue: -32768
+        RawValue: 0
       Z:
         RawValue: 65536
     RudderOffset:
       X:
         RawValue: 0
       Y:
-        RawValue: -32768
+        RawValue: 0
       Z:
-        RawValue: -114688
+        RawValue: -131072
     RudderArea:
       RawValue: 262144
     MaxRudderAngle:

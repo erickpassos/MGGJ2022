@@ -1,3 +1,5 @@
+#pragma player_count 8
+
 input {
     button Forward;
     button Backward;

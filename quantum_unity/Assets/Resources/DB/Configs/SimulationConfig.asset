@@ -43,11 +43,11 @@ MonoBehaviour:
         Z:
           RawValue: 0
       SolverType: 2
-      SolverIterations: 8
-      PositionSolverIterations: 4
+      SolverIterations: 4
+      PositionSolverIterations: 2
       UseJoints: 1
       UseAngularVelocity: 1
-      UseVerticalTransform: 1
+      UseVerticalTransform: 0
       PenetrationAllowance:
         RawValue: 655
       PenetrationCorrection:
@@ -137,7 +137,7 @@ MonoBehaviour:
       DefaultComponentBlockCapacity: 128
       ComponentTypeConfiguration: []
     AutoLoadSceneFromMap: 2
-    DeltaTimeType: 0
+    DeltaTimeType: 1
     HeapPageShift: 15
     HeapPageCount: 256
     HeapExtraCount: 0

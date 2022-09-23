@@ -84,11 +84,17 @@
     <Compile Include="FrameContext.User.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
+    <Compile Include="Score\ScoreSystem.cs" />
     <Compile Include="SimulationConfig.User.cs" />
+    <Compile Include="Supply\PickupSystem.cs" />
+    <Compile Include="Supply\SupplySystem.cs" />
     <Compile Include="SystemSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Water\Assets\GerstnerWaves.cs" />
     <Compile Include="Water\Assets\WaveSample.cs" />
+    <Compile Include="Weapons\BombSystem.cs" />
+    <Compile Include="Weapons\ResetSystem.cs" />
+    <Compile Include="Weapons\WeaponSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="db.json" />
@@ -97,7 +103,10 @@
     <Content Include="Boats\boat.qtn" />
     <Content Include="Boats\buoy.qtn" />
     <Content Include="Boats\input.qtn" />
+    <Content Include="Score\score.qtn" />
+    <Content Include="Supply\supply.qtn" />
     <Content Include="Water\Assets\wave_sample.qtn" />
+    <Content Include="Weapons\weapons.qtn" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -5,7 +5,7 @@ namespace Quantum
   public unsafe partial class BoatConfig : AssetObject
   {
     public FP Accel = 10;
-    public FP RotationSpeed = 1;
+    public FP AutoAccel = 0;
     public FP KeelArea = 10;
     public FPVector3 KeelOffset = FPVector3.Forward;
     public FPVector3 RudderOffset = FPVector3.Back;
@@ -27,18 +27,22 @@ namespace Quantum
       keelForce = UpdateWaterfoil(f, ref filter, KeelOffset, filter.Transform->Right) * KeelArea * FP._0_50;
       filter.Body->AddForceAtPosition(keelForce, frontPosition, filter.Transform);
 
-      // rudder and engine only if controlled by player
-      if (filter.Boat->Player == default) return;
       
-      var input = f.GetPlayerInput(filter.Boat->Player);
+      Input input = default;
+      // rudder and engine only if controlled by player (in case not waiting for respawn
+      if (f.Has<TimedReset>(filter.Entity) == false && f.TryGet<BoatControl>(filter.Entity, out var control))
+      {
+        input = *f.GetPlayerInput(control.Player);
+      }
+
       var forward = filter.Transform->Forward;
 
       filter.Boat->CurrentRudderAngle = FP._0;
-      if (input->Left.IsDown)
+      if (input.Left.IsDown)
       {
         filter.Boat->CurrentRudderAngle = MaxRudderAngle;
       }
-      else if (input->Right.IsDown)
+      else if (input.Right.IsDown)
       {
         filter.Boat->CurrentRudderAngle = -MaxRudderAngle;
       }
@@ -57,14 +61,15 @@ namespace Quantum
       
       filter.Body->AddForceAtPosition(rudderForce, rudderPosition, filter.Transform);
       
-      if (input->Forward.IsDown)
+      if (input.Forward.IsDown)
       {
         filter.Body->AddForce(forward * Accel);
       }
-      if (input->Backward.IsDown)
+      if (input.Backward.IsDown)
       {
         filter.Body->AddForce(-forward * Accel);
       }
+      filter.Body->AddForce(forward * AutoAccel);
       
 #if DEBUG
       Draw.Sphere(rudderPosition, FP._0_10, ColorRGBA.Black);

@@ -33,7 +33,7 @@ MonoBehaviour:
     DisableFill: 0
   DrawStaticMeshTriangles: 1
   DrawStaticMeshNormals: 0
-  DrawSceneMeshCells: 1
+  DrawSceneMeshCells: 0
   DrawSceneMeshTriangles: 1
   StaticColliderColor: {r: 0.70980394, g: 0.9019608, b: 0.11372549, a: 1}
   DynamicColliderColor: {r: 0.6, g: 0.8509804, b: 0.91764706, a: 1}

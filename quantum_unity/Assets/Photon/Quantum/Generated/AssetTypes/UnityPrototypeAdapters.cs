@@ -6,6 +6,54 @@
 using System;
 namespace Quantum.Prototypes.Unity {
   [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.Barge))]
+  public class Barge_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.Barge_Prototype> {
+    [Quantum.LocalReference]
+    public global::EntityPrototype Supply;
+    public Quantum.PlayerRef Player;
+
+    public sealed override Quantum.Prototypes.Barge_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.Barge_Prototype();
+      converter.Convert(this.Supply, out result.Supply);
+      result.Player = this.Player;
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.Boat))]
+  public class Boat_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.Boat_Prototype> {
+    public Quantum.AssetRefBoatConfig Config;
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Photon.Deterministic.FP CurrentRudderAngle;
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Quantum.Transform3D Spawn;
+    [Quantum.LocalReference]
+    public global::EntityPrototype Barge;
+
+    public sealed override Quantum.Prototypes.Boat_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.Boat_Prototype();
+      result.Config = this.Config;
+      result.CurrentRudderAngle = this.CurrentRudderAngle;
+      result.Spawn = this.Spawn;
+      converter.Convert(this.Barge, out result.Barge);
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.Supply))]
+  public class Supply_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.Supply_Prototype> {
+    [Quantum.LocalReference]
+    public global::EntityPrototype Barge;
+    public Photon.Deterministic.FP RangeCheck;
+
+    public sealed override Quantum.Prototypes.Supply_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.Supply_Prototype();
+      converter.Convert(this.Barge, out result.Barge);
+      result.RangeCheck = this.RangeCheck;
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
   [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.PhysicsJoints3D))]
   public class PhysicsJoints3D_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.PhysicsJoints3D_Prototype> {
     [Quantum.Inspector.DynamicCollectionAttribute()]

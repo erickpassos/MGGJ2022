@@ -41,11 +41,41 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
+    - Path: Resources/DB/Supply/Crate|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 239527291149011093
+      ResourcePath: DB/Supply/Crate
+    - Path: Resources/DB/Weapons/Bomb|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 316841249645688732
+      ResourcePath: DB/Weapons/Bomb
+    - Path: Resources/DB/Boats/UBoat|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 337491548368432263
+      ResourcePath: DB/Boats/UBoat
     - Path: Resources/DB/Water/WaterSine
       AssetRef:
         Id:
           Value: 717768266384039144
       ResourcePath: DB/Water/WaterSine
+    - Path: Resources/DB/Boats/UBoatConfig
+      AssetRef:
+        Id:
+          Value: 940149218974906373
+      ResourcePath: DB/Boats/UBoatConfig
+    - Path: Resources/DB/Weapons/Torpedo|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 1140604506146435571
+      ResourcePath: DB/Weapons/Torpedo
+    - Path: Resources/DB/Weapons/Torpedo|EntityView
+      AssetRef:
+        Id:
+          Value: 1474504360399629822
+      ResourcePath: DB/Weapons/Torpedo
     - Path: Resources/DB/Water/WaterGerstner
       AssetRef:
         Id:
@@ -56,13 +86,68 @@ MonoBehaviour:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
-    - Path: Resources/DB/Boats/FishingBoatConfig
+    - Path: Resources/DB/Boats/WeaponBoatConfig
+      AssetRef:
+        Id:
+          Value: 2014197304067890377
+      ResourcePath: DB/Boats/WeaponBoatConfig
+    - Path: Resources/DB/Boats/TorpedoConfig
+      AssetRef:
+        Id:
+          Value: 2215195106711979280
+      ResourcePath: DB/Boats/TorpedoConfig
+    - Path: Resources/DB/Boats/UBoat|EntityView
+      AssetRef:
+        Id:
+          Value: 2285068150955040441
+      ResourcePath: DB/Boats/UBoat
+    - Path: Resources/DB/Boats/FishingBoat|EntityView
+      AssetRef:
+        Id:
+          Value: 2516098456126772751
+      ResourcePath: DB/Boats/FishingBoat
+    - Path: Resources/DB/Boats/TugBoatConfig
       AssetRef:
         Id:
           Value: 2778058764126549803
-      ResourcePath: DB/Boats/FishingBoatConfig
+      ResourcePath: DB/Boats/TugBoatConfig
     - Path: Resources/DB/Map1_mesh
       AssetRef:
         Id:
           Value: 3021804464079384170
       ResourcePath: DB/Map1_mesh
+    - Path: Resources/DB/Boats/Barge|EntityView
+      AssetRef:
+        Id:
+          Value: 3145236145079305939
+      ResourcePath: DB/Boats/Barge
+    - Path: Resources/DB/Supply/Crate|EntityView
+      AssetRef:
+        Id:
+          Value: 3493455050690265251
+      ResourcePath: DB/Supply/Crate
+    - Path: Resources/DB/Boats/Barge|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 3933140486517616226
+      ResourcePath: DB/Boats/Barge
+    - Path: Resources/DB/Boats/WeaponBoat|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 3938611279781424106
+      ResourcePath: DB/Boats/WeaponBoat
+    - Path: Resources/DB/Boats/WeaponBoat|EntityView
+      AssetRef:
+        Id:
+          Value: 4040462610754143313
+      ResourcePath: DB/Boats/WeaponBoat
+    - Path: Resources/DB/Boats/FishingBoat|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 4094133533742711560
+      ResourcePath: DB/Boats/FishingBoat
+    - Path: Resources/DB/Weapons/Bomb|EntityView
+      AssetRef:
+        Id:
+          Value: 4407728941339840458
+      ResourcePath: DB/Weapons/Bomb

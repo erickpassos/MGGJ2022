@@ -1,0 +1,15 @@
+singleton component Score {
+    Byte TeamReconnect;
+    Byte TeamDisconnect;
+}
+
+signal ScoreReconnect();
+signal ScoreDisconnect();
+
+synced event ScoreReconnect {
+    entity_ref Scorer;
+}
+
+synced event ScoreDisconnect {
+    entity_ref Scorer;
+}

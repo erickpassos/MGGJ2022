@@ -23,7 +23,7 @@ MonoBehaviour:
     Scene: Game
     ScenePath: Assets/Photon/QuantumDemo/Game/Game.unity
     SceneGuid: 03bd5ba32b9950244a08f22579187d8b
-    WorldSize: 256
+    WorldSize: 512
     BucketsCount: 16
     BucketsSubdivisions: 8
     BucketingAxis: 0
@@ -44,42 +44,42 @@ MonoBehaviour:
     StaticColliders3D:
     - Rotation:
         X:
-          RawValue: -46340
+          RawValue: 0
         Y:
           RawValue: 0
         Z:
           RawValue: 0
         W:
-          RawValue: 46340
+          RawValue: 65536
       Position:
         X:
-          RawValue: -13107200
+          RawValue: -9329500
         Y:
-          RawValue: -65536
+          RawValue: -66191
         Z:
-          RawValue: -13107200
+          RawValue: -2793707
       PhysicsMaterial:
         Id:
           Value: 0
-      ShapeType: 4
+      ShapeType: 2
       SphereRadius:
         RawValue: 0
       BoxExtents:
         X:
-          RawValue: 0
+          RawValue: 327680
         Y:
-          RawValue: 0
+          RawValue: 327680
         Z:
-          RawValue: 0
+          RawValue: 327680
       SmoothSphereMeshCollisions: 0
       StaticData:
-        Name: CottageIsland
+        Name: PickupSupplyTrigger (1)
         Tag: Untagged
         Layer: 0
         Asset:
           Id:
-            Value: 0
-        IsTrigger: 0
+            Value: 239527291149011093
+        IsTrigger: 1
         ColliderIndex: 0
         MutableMode: 0
       MutableMode: 0
@@ -94,11 +94,11 @@ MonoBehaviour:
           RawValue: 46340
       Position:
         X:
-          RawValue: 0
+          RawValue: 2686976
         Y:
-          RawValue: -66191
+          RawValue: -65536
         Z:
-          RawValue: 0
+          RawValue: -3211264
       PhysicsMaterial:
         Id:
           Value: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
           RawValue: 0
       SmoothSphereMeshCollisions: 0
       StaticData:
-        Name: Atol
+        Name: NEUTRAL-LittleIsles
         Tag: Untagged
         Layer: 0
         Asset:
@@ -124,180 +124,243 @@ MonoBehaviour:
         ColliderIndex: 1
         MutableMode: 0
       MutableMode: 0
-    MapEntities: []
-  Prototypes:
-  - Boat: []
-    MultiBuoy:
-    - Offset:
+    - Rotation:
         X:
-          RawValue: 32768
+          RawValue: -10534
         Y:
-          RawValue: 0
+          RawValue: 45127
         Z:
-          RawValue: 32768
-      Spring:
-        RawValue: 2621440
-      Damper:
-        RawValue: 6553
-      Buoys:
-      - Spring:
-          RawValue: 0
-        Damper:
-          RawValue: 0
-        LocalOffset:
-          X:
-            RawValue: 0
-          Y:
-            RawValue: 0
-          Z:
-            RawValue: 0
-        HeightOffset:
-          RawValue: 0
-        _previousStrength:
-          RawValue: 0
-      - Spring:
-          RawValue: 0
-        Damper:
-          RawValue: 0
-        LocalOffset:
-          X:
-            RawValue: 0
-          Y:
-            RawValue: 0
-          Z:
-            RawValue: 0
-        HeightOffset:
-          RawValue: 0
-        _previousStrength:
-          RawValue: 0
-      - Spring:
-          RawValue: 0
-        Damper:
-          RawValue: 0
-        LocalOffset:
-          X:
-            RawValue: 0
-          Y:
-            RawValue: 0
-          Z:
-            RawValue: 0
-        HeightOffset:
-          RawValue: 0
-        _previousStrength:
-          RawValue: 0
-      - Spring:
-          RawValue: 0
-        Damper:
-          RawValue: 0
-        LocalOffset:
-          X:
-            RawValue: 0
-          Y:
-            RawValue: 0
-          Z:
-            RawValue: 0
-        HeightOffset:
-          RawValue: 0
-        _previousStrength:
-          RawValue: 0
-    CharacterController2D: []
-    CharacterController3D: []
-    NavMeshAvoidanceAgent: []
-    NavMeshAvoidanceObstacle: []
-    NavMeshPathfinder: []
-    NavMeshSteeringAgent: []
-    PhysicsBody2D: []
-    PhysicsBody3D:
-    - Version: 2
-      Config:
-        Value: 58
-      Mass:
-        RawValue: 32768
-      Drag:
-        RawValue: 49152
-      AngularDrag:
-        RawValue: 32768
-      CenterOfMass:
+          RawValue: 45127
+        W:
+          RawValue: 10534
+      Position:
         X:
-          RawValue: 0
+          RawValue: -3670016
         Y:
-          RawValue: 0
+          RawValue: -65536
         Z:
-          RawValue: 0
-      RotationFreeze:
-        Value: 0
-      GravityScale:
-        _hasValue: 0
-        _value:
-          RawValue: 65536
-    PhysicsCollider2D: []
-    PhysicsCollider3D:
-    - ShapeConfig:
-        ShapeType: 2
-        SphereRadius:
-          RawValue: 32768
-        PositionOffset:
-          X:
-            RawValue: 0
-          Y:
-            RawValue: 0
-          Z:
-            RawValue: 0
-        BoxExtents:
-          X:
-            RawValue: 26214
-          Y:
-            RawValue: 26214
-          Z:
-            RawValue: 26214
-        RotationOffset:
-          X:
-            RawValue: 0
-          Y:
-            RawValue: 0
-          Z:
-            RawValue: 0
-        UserTag: 0
-        IsPersistent: 1
-        CompoundShapes: []
-        IsSetFromSourceCollider: 0
-      Layer: 0
-      IsTrigger: 0
+          RawValue: 10682368
       PhysicsMaterial:
         Id:
           Value: 0
-    PhysicsCallbacks2D: []
-    PhysicsCallbacks3D:
-    - CallbackFlags:
-        Value: 0
-    Transform2D: []
-    Transform2DVertical: []
-    Transform3D:
-    - Position:
-        X:
-          RawValue: -1483079
-        Y:
-          RawValue: 195952
-        Z:
-          RawValue: -1002700
-      Rotation:
+      ShapeType: 4
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
         X:
           RawValue: 0
         Y:
           RawValue: 0
         Z:
           RawValue: 0
-    View: []
-    PhysicsJoints2D: []
-    PhysicsJoints3D: []
-  - Boat:
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: ORIGIN-Lighthouse
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 2
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: -3724504
+        Y:
+          RawValue: -93061
+        Z:
+          RawValue: 9922365
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 4
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: PickupSupplyTrigger
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 239527291149011093
+        IsTrigger: 1
+        ColliderIndex: 3
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: -8953
+        Y:
+          RawValue: 45467
+        Z:
+          RawValue: 45467
+        W:
+          RawValue: 8953
+      Position:
+        X:
+          RawValue: -10354688
+        Y:
+          RawValue: -66191
+        Z:
+          RawValue: -3276800
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 4
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: ORIGIN-Atol
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 4
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: -46340
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 46340
+      Position:
+        X:
+          RawValue: -65536
+        Y:
+          RawValue: -65536
+        Z:
+          RawValue: -131072
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 4
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: TARGET-CottageIsland
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 5
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: -534118
+        Y:
+          RawValue: -65535
+        Z:
+          RawValue: 707788
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 4
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: DeliverSupplyTrigger (2)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 1
+        ColliderIndex: 6
+        MutableMode: 0
+      MutableMode: 0
+    MapEntities: []
+  Prototypes:
+  - Barge: []
+    Boat:
     - Config:
         Id:
           Value: 2778058764126549803
-      Player:
-        _index: 1
       CurrentRudderAngle:
         RawValue: 0
+      Spawn:
+        Position:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        Rotation:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+          W:
+            RawValue: 0
+      Barge:
+        SceneIndexPlusOne: 0
+    BoatControl:
+    - Player:
+        _index: 1
+    Bomb: []
     MultiBuoy:
     - Offset:
         X:
@@ -371,6 +434,10 @@ MonoBehaviour:
           RawValue: 0
         _previousStrength:
           RawValue: 0
+    Score: []
+    Supply: []
+    TimedReset: []
+    Weapon: []
     CharacterController2D: []
     CharacterController3D: []
     NavMeshAvoidanceAgent: []
@@ -381,7 +448,7 @@ MonoBehaviour:
     PhysicsBody3D:
     - Version: 2
       Config:
-        Value: 58
+        Value: 42
       Mass:
         RawValue: 65536
       Drag:
@@ -446,29 +513,53 @@ MonoBehaviour:
     Transform3D:
     - Position:
         X:
-          RawValue: -1478492
+          RawValue: -9145549
         Y:
-          RawValue: 137625
+          RawValue: 41287
         Z:
-          RawValue: -692060
+          RawValue: -3374448
       Rotation:
         X:
           RawValue: 0
         Y:
           RawValue: 0
         Z:
-          RawValue: 0
+          RawValue: 23163230
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
-  - Boat:
+  - Barge:
+    - Supply:
+        SceneIndexPlusOne: 0
+      Player:
+        _index: 0
+    Boat:
     - Config:
         Id:
           Value: 2778058764126549803
-      Player:
-        _index: 0
       CurrentRudderAngle:
         RawValue: 0
+      Spawn:
+        Position:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        Rotation:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+          W:
+            RawValue: 0
+      Barge:
+        SceneIndexPlusOne: 0
+    BoatControl: []
+    Bomb: []
     MultiBuoy:
     - Offset:
         X:
@@ -542,6 +633,10 @@ MonoBehaviour:
           RawValue: 0
         _previousStrength:
           RawValue: 0
+    Score: []
+    Supply: []
+    TimedReset: []
+    Weapon: []
     CharacterController2D: []
     CharacterController3D: []
     NavMeshAvoidanceAgent: []
@@ -552,7 +647,7 @@ MonoBehaviour:
     PhysicsBody3D:
     - Version: 2
       Config:
-        Value: 58
+        Value: 56
       Mass:
         RawValue: 65536
       Drag:
@@ -741,17 +836,17 @@ MonoBehaviour:
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D:
     - CallbackFlags:
-        Value: 0
+        Value: 1536
     Transform2D: []
     Transform2DVertical: []
     Transform3D:
     - Position:
         X:
-          RawValue: -1478492
+          RawValue: -9145549
         Y:
-          RawValue: 137625
+          RawValue: 41287
         Z:
-          RawValue: -1037434
+          RawValue: -3719823
       Rotation:
         X:
           RawValue: 0
@@ -767,7 +862,7 @@ MonoBehaviour:
         JointType: 1
         UserTag: 0
         ConnectedEntity:
-          SceneIndexPlusOne: 2
+          SceneIndexPlusOne: 1
         ConnectedAnchor:
           X:
             RawValue: 0
@@ -812,3 +907,450 @@ MonoBehaviour:
           _hasValue: 0
           _value:
             RawValue: 0
+  - Barge: []
+    Boat:
+    - Config:
+        Id:
+          Value: 2778058764126549803
+      CurrentRudderAngle:
+        RawValue: 0
+      Spawn:
+        Position:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        Rotation:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+          W:
+            RawValue: 0
+      Barge:
+        SceneIndexPlusOne: 0
+    BoatControl:
+    - Player:
+        _index: 2
+    Bomb: []
+    MultiBuoy:
+    - Offset:
+        X:
+          RawValue: 62259
+        Y:
+          RawValue: -16384
+        Z:
+          RawValue: 124517
+      Spring:
+        RawValue: 655360
+      Damper:
+        RawValue: 6553
+      Buoys:
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+    Score: []
+    Supply: []
+    TimedReset: []
+    Weapon:
+    - Bomb:
+        Id:
+          Value: 316841249645688732
+      Offset:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: -131072
+      Time:
+        RawValue: 0
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D:
+    - Version: 2
+      Config:
+        Value: 58
+      Mass:
+        RawValue: 65536
+      Drag:
+        RawValue: 32768
+      AngularDrag:
+        RawValue: 131072
+      CenterOfMass:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      RotationFreeze:
+        Value: 0
+      GravityScale:
+        _hasValue: 0
+        _value:
+          RawValue: 65536
+    PhysicsCollider2D: []
+    PhysicsCollider3D:
+    - ShapeConfig:
+        ShapeType: 2
+        SphereRadius:
+          RawValue: 0
+        PositionOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        BoxExtents:
+          X:
+            RawValue: 62259
+          Y:
+            RawValue: 32768
+          Z:
+            RawValue: 124518
+        RotationOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        UserTag: 0
+        IsPersistent: 1
+        CompoundShapes: []
+        IsSetFromSourceCollider: 0
+      Layer: 0
+      IsTrigger: 0
+      PhysicsMaterial:
+        Id:
+          Value: 0
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D:
+    - CallbackFlags:
+        Value: 0
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: -8655340
+        Y:
+          RawValue: 41287
+        Z:
+          RawValue: -2518548
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - Barge: []
+    Boat:
+    - Config:
+        Id:
+          Value: 940149218974906373
+      CurrentRudderAngle:
+        RawValue: 0
+      Spawn:
+        Position:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        Rotation:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+          W:
+            RawValue: 0
+      Barge:
+        SceneIndexPlusOne: 0
+    BoatControl:
+    - Player:
+        _index: 2
+    Bomb: []
+    MultiBuoy:
+    - Offset:
+        X:
+          RawValue: 62259
+        Y:
+          RawValue: 65536
+        Z:
+          RawValue: 124517
+      Spring:
+        RawValue: 655360
+      Damper:
+        RawValue: 6553
+      Buoys:
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+      - Spring:
+          RawValue: 0
+        Damper:
+          RawValue: 0
+        LocalOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        HeightOffset:
+          RawValue: 0
+        _previousStrength:
+          RawValue: 0
+    Score: []
+    Supply: []
+    TimedReset: []
+    Weapon:
+    - Bomb:
+        Id:
+          Value: 1140604506146435571
+      Offset:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 196608
+      Time:
+        RawValue: 0
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D:
+    - Version: 2
+      Config:
+        Value: 58
+      Mass:
+        RawValue: 65536
+      Drag:
+        RawValue: 32768
+      AngularDrag:
+        RawValue: 131072
+      CenterOfMass:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      RotationFreeze:
+        Value: 0
+      GravityScale:
+        _hasValue: 0
+        _value:
+          RawValue: 65536
+    PhysicsCollider2D: []
+    PhysicsCollider3D:
+    - ShapeConfig:
+        ShapeType: 2
+        SphereRadius:
+          RawValue: 0
+        PositionOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        BoxExtents:
+          X:
+            RawValue: 49152
+          Y:
+            RawValue: 49152
+          Z:
+            RawValue: 124518
+        RotationOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        UserTag: 0
+        IsPersistent: 1
+        CompoundShapes: []
+        IsSetFromSourceCollider: 0
+      Layer: 0
+      IsTrigger: 0
+      PhysicsMaterial:
+        Id:
+          Value: 0
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D:
+    - CallbackFlags:
+        Value: 0
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: -8375501
+        Y:
+          RawValue: 41287
+        Z:
+          RawValue: -2518548
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - Barge: []
+    Boat: []
+    BoatControl: []
+    Bomb: []
+    MultiBuoy: []
+    Score:
+    - TeamReconnect: 0
+      TeamDisconnect: 0
+    Supply: []
+    TimedReset: []
+    Weapon: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D: []
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []

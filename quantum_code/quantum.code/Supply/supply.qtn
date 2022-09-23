@@ -1,0 +1,17 @@
+component Supply {
+    entity_ref Barge;
+    FP RangeCheck;
+}
+
+component Barge {
+    entity_ref Supply;
+    player_ref Player;
+}
+
+synced event PickedSupply {
+    local player_ref Player;
+}
+
+synced event DeliveredSupply {
+    local player_ref Player;
+}

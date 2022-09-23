@@ -1,0 +1,12 @@
+component Weapon {
+    asset_ref<EntityPrototype> Bomb;
+    FPVector3 Offset;
+    [HideInInspector]
+    FP Time;
+}
+
+component Bomb {
+    FP TTL;
+    FP Radius;
+    FP Power;
+}
